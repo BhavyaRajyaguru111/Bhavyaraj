@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delayed Prompt</title>
+    <style>
+        #demo {
+            height: 100%;
+            width: 300px;
+            border: 1px solid black;
+            visibility:hidden;
+            /* background-color: black; */
+            /* color: white; */
+        }
+    </style>
+</head>
+
+<body>
+    <button id="show">Click me to see</button>
+    <button id="hide">Click me to hide</button>
+    <div id="demo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nulla optio molestiae qui deleniti reprehenderit praesentium ut cupiditate minima expedita nemo illum quisquam quia omnis amet rerum, voluptates tempora asperiores unde dolor odit molestias rem necessitatibus! Reprehenderit quae eveniet excepturi dignissimos tempora asperiores eligendi ea quasi officiis? Quod atque maxime molestias libero explicabo sequi, iusto expedita deserunt alias unde quisquam architecto aliquid nostrum quae facere esse rem! Maxime at accusantium nihil. Laboriosam ipsa corporis iste, nesciunt quod eos harum doloribus voluptas natus suscipit distinctio at. Distinctio illo doloribus consequuntur ut, pariatur quisquam sed deserunt unde, mollitia rem, aliquam est architecto.
+    </div>
+    <!-- <div id="demo">Click me!</div> -->
+    <script>
+        var show = document.getElementById("show");
+        var hide = document.getElementById("hide");
+        var demo = document.getElementById("demo");
+        show.addEventListener('click', ()=> {
+            // document.getElementById("demo").style.visibility = "visible";
+            demo.style.visibility = "visible";
+        })
+        hide.addEventListener('click', ()=> {
+            demo.style.visibility = "hidden";
+        })
+
+
+    </script>
+</body>
+
+</html>
