@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic</title>
+    <style>
+        #container {
+            height: 100%;
+            width: 400px;
+            border: 1px solid rgb(53, 52, 52);
+            background-color: rgb(53, 52, 52);
+            /* opacity: 0; */
+        }
+
+        #display {
+            height: 40px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid rgb(53, 52, 52);
+        }
+
+        #timmer {
+            transform: translate(0px, -20px)
+        }
+        .back {
+            height: 300px;
+            width: 300px;
+            background-color: white;
+            border-radius: 100%;
+        }
+        #stop {
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+            border-radius: 100%;
+            background-color: red;
+            opacity: 1;
+        }
+
+        #go {
+            height: 300px;
+            width: 300px;
+            border: 1px solid green;
+            border-radius: 100%;
+            background-color: green;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body onload="changeSignal();">
+    <center>
+        <div id="container">
+            <div id="display">
+                <h1 id="timmer"></h1>
+            </div>
+            <div class="back">
+            <div id="stop"></div>
+            </div>
+            <div class="back">
+            <div id="go"></div>
+            </div>
+        </div>
+        <!-- <input type="button" value="Change!" onclick="changeSignal();"> -->
+    </center>
+    <script>
+        function changeSignal() {
+            let stop = document.getElementById("stop").style;
+            let go = document.getElementById("go").style;
+            let display = document.getElementById("timmer");
+            let white = "white";
+            let green = "green";
+            let red = "red";
+            let count = 0;
+            let timmer = 10;
+            let signal = setInterval(() => {
+                display.innerHTML = timmer;
+                console.log(count);
+                if (count == 10) {
+                    stop.opacity = "0"
+                    go.opacity = "1";
+                    
+                    display.innerHTML = "Go!";
+                } else if(count == 11) {
+                    go.opacity = "0";
+                    stop.opacity = "1";
+                    clearInterval(signal);
+
+                }
+                count++;
+                timmer--;
+            }, 500)
+
+
+        }
+    </script>
+</body>
+
+</html>
